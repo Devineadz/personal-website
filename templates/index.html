@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>{% block head %}
+  <title>{% block title %}Diana Zitting-Rioux {% endblock %}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content=width="device-width, initial-scale=2">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css')}}">
+{% endblock %}
+</head>
+<body>
+<!––Adding a small border-->
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <h1 class="jb"></h1>
+</div>
+<!––Navigation bar-->
+{% block navbar%} <nav class="navbar navbar-expand-sm bg-custom navbar-dark justify-content-center">
+<a class="navbar-brand" href="/">Diana Zitting-Rioux</a>
+  <ul class="nav navbar-nav navbar-center">
+    <li class="nav-item">
+      <a class="nav-link" href="/">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/CV">CV</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/Projects">Projects</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/Blog">Blog</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/Contact">Contact</a>
+    </li>
+  </ul>
+</ul>
+<!––Login drop down menu with links only accessible to logged in users-->
+<div class="nav-item dropdown">
+    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"></a>
+    <div class="dropdown-menu">
+        {% if 'username' in session %}
+            <a href="/Admin" class="dropdown-item">{{session.username }} logged</a>
+        {% endif %}
+        <a href="/Login" class="dropdown-item">Login</a>
+        {% if 'username' in session %}
+        <a href="/Post_blog" class="dropdown-item">Post blog</a>
+        <a href="/logout" class="dropdown-item">Logout</a>
+        {% endif %}
+    </div>
+</div>
+
+</nav>{% endblock %}
+<br>
+<!––Middle intro section-->
+{% block content %}
+<div class="container" style="margin-top:30px">
+  <div class="row">
+    <div class="col-sm-8">
+    <h1 align="center">Welcome!</h1>
+    </br>
+      <h2 align="center">A little introduction...</h2><br>
+    <p align="center"> I am a last year student at Concordia University and this is my final project web page for SOEN-287.<br>
+    I have used HTML, CSS, Bootstrap and Flask to create it.<br>
+    Please check out my Project Blog and my other projects!</p>
+    </div>
+      <!––Side Picture-->
+  <div class=col-sm-4">
+    <img src="{{url_for('static', filename='img/profile.jpg')}}" class="img-rounded" alt="My Picture" width="250">
+  </div>
+</div>
+</div>
+{% endblock %}
+{% block foot %}
+    <!––Copyright-->
+<footer class="page-footer font-small light">
+  <div class="footer-copyright text-center py-3">@ 2020 Copyright: Diana Zitting-Rioux
+</div>
+{% endblock %}</footer>
+</body>
+
+</html>

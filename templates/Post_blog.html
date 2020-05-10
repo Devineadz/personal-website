@@ -1,0 +1,42 @@
+{%  extends "index.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{%  block title %}{{ super() }} - Contacted!{%  endblock %}
+
+{% block content %}
+    <div class="container" style="margin-top:30px">
+        <div class="row">
+        <div class="col-sm-8">
+            <h1>New blog post</h1><br><br>
+{% if form2.errors %}
+    <ul class="errors">
+        {% for field_name, field_errors in form2.errors|dictsort if field_errors %}
+            {% for error in field_errors %}
+                <li>{{ form2[field_name].label }}: {{ error }}</li>
+            {% endfor %}
+        {% endfor %}
+    </ul>
+{% endif %}
+
+      <!––Blog post form only accessible to logged in user-->
+  <form action="/Post_blog" method="post" class="form" role="form">
+      {{ form2.csrf_token }}
+
+        <div class="row">
+      <div class="form-group col-md-10">
+     {{ wtf.form_field(form2.blog_title, class='form-control', horizontal_columns=('lg', 2, 8), placeholder='Post title')}}
+      </div>
+      <div class="form-group col-md-10">
+     {{ wtf.form_field(form2.content, class='form-control', placeholder='Your post')}}
+      </div>
+          <div class="form-group col-md-10">
+     {{ wtf.form_field(form2.topic_area, class='form-control', placeholder='Topic area')}}
+     <br>
+
+
+           <button type="submit" class="btn btn-primary">Submit</button>
+           <button type="reset" class="btn btn-secondary">Clear</button>
+
+      </div></div></form>
+        </div></div></div>
+{% endblock %}

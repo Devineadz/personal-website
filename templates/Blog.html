@@ -1,0 +1,35 @@
+{%  extends "index.html" %}
+{% block head %}{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/blog.css')}}">{% endblock %}
+{%  block title %}{{ super() }} - Blog{%  endblock %}
+
+{% block content %}
+    <div class="container" style="margin-top:30px">
+  <div class="row">
+    <div class="col-sm-8">
+    <h1>Project Blog</h1><br>
+    <!-- Creates a table of blog posts from blog_posts.csv using a for loop. Using table for assignment purposes. -->
+
+        {% for post in posts %}
+
+            <h2> {{ post.topic }}</h2>
+            <sub> {{ post.subject }}</sub><br><br>
+        <p> {{ post.matter}}</p>
+        {% endfor %}
+    </div>
+  <div class="col-sm-4">
+      <!––Description sidebar-->
+      <img src="{{url_for('static', filename='img/IC.png')}}" alt="InnerConflict 1" width="250">
+      </br></br>
+      <b>Blog Description</b> <br>
+      <p>I will be posting here about my current projects and things I learn on the way!</p>
+</br>
+    </div>
+  </div>
+</div>
+    </div>
+
+
+  </div>
+</div>
+{% endblock %}

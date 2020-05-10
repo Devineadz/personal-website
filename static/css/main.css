@@ -1,0 +1,58 @@
+.jumbotron{
+  background-image: url("../img/finland.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+  padding: 0.1em 0.1em;
+}
+
+body {
+  background-image: url("../img/finland.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-color: lavender;
+}
+
+div.row {
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  margin: 10px;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.jb {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  color: black;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.bg-custom{
+  background-color: rgba(241, 231, 254, 0.3);
+}
+
+.navbar a{
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif !important;
+}
+
+a:link{
+  color: #000000 !important;
+}
+
+a:hover{
+  text-decoration: underline !important;
+  color: #888888 !important;
+}
+
+a:visited{
+  color: #000000 !important;
+}
+
+th{
+    font-size:200% !important;
+    color:darkslateblue !important;
+}
+

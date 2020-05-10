@@ -1,0 +1,71 @@
+{%  extends "index.html" %}
+
+{%  block title %}{{ super() }} - CV{%  endblock %}
+
+{% block content %}
+    <div class="container" style="margin-top:30px">
+  <div class="row">
+    <div class="col-sm-8">
+    <h1>Resume</h1>
+    </br>
+      <h2>Education</h2>
+        <h5>Concordia University</h5>
+        <h6>Montreal, Canada</h6>
+        <p>Bachelor in Computer Science, expected graduation in 2020</p>
+    </br>
+        <h5>Haaga-Helia University of Applied Sciences</h5>
+        <h6>Helsinki, Finland</h6>
+        <p>Bachelor In Business Administration, graduated in 2013</p>
+
+        <h2>Work Experience</h2>
+         <h5>Mixtiles</h5>
+        <h6>Customer Service Representative (casual)</h6>
+        <p>November 2016-</p>
+        <ul>
+            <li>Remote customer service online</li>
+            <li>Replying to customers and solving their issues</li>
+            <li>Technologies: In-house Chrome plugins</li>
+        </ul>
+
+         <h5>KeyWords Studios, Montreal</h5>
+        <h6>Customer Service Representative (casual)</h6>
+        <p>May 2015-September 2016</p>
+        <ul>
+            <li>Functionality testing for games on PC, consoles (PS4 and Xbox One) and mobile </li>
+            <li>Worked on several projects from different genres from indie to AAA games</li>
+            <li>Linguistic testing in Finnish </li>
+            <li>Bug reporting on Jira according to company standards </li>
+            <li>Technologies: Jira, Confluence </li>
+        </ul>
+
+        <h5>Helsinki Police Department, Immigration Unit</h5>
+        <h6>Assistant in Investigation</h6>
+        <p>February 2014-August 2015</p>
+        <ul>
+            <li>From February 2014 to June worked in customer service for immigration affairs </li>
+            <li>From June 2014 promoted to Assistant in Investigation for the Deportation unit </li>
+            <li>Assisting the sergeant and inspector, including data entry, event management, translations and other tasks </li>
+            <li>Technologies: government databases, MS Office </li>
+        </ul>
+        <h5>Other work experience</h5>
+        <ul>
+            <li> Assistant for the Minister of European Affairs and Trade (summer 2012) </li>
+            <li>Internship at the Embassy of Finland in Ottawa (autumn 2011) </li>
+        </ul>
+    </div>
+  <div class="col-sm-4">
+      <!––Picture sidebar-->
+    <img src="{{url_for('static', filename='img/my_mainpic.jpg')}}" class="img-rounded" alt="My Picture" width="250">
+  </br>
+      <p>
+      </br>
+          <!––Using linkedin and Github icons in links-->
+          Check out my
+      <a href="https://ca.linkedin.com/in/diana-zitting-rioux-20488b80" class="fa fa-linkedin"> Linkedin </a> and
+      <a href="https://github.com/Devineadz" class="fa fa-github"> GitHub</a>!
+      </p>
+
+  </div>
+</div>
+</div>
+{% endblock %}

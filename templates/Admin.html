@@ -1,0 +1,22 @@
+{%  extends "index.html" %}
+
+{%  block title %}{{ super() }} - Logged in!{%  endblock %}
+
+{% block content %}
+   <div class="container" style="margin-top:30px">
+  <div class="row">
+    <div class="col-sm-8">
+    <h1>Welcome back {{ username }}!</h1>
+    </br>
+      <p>Check options at dropdown menu.</p>
+    <!––Uses for loop to get message senders from contact.csv-->
+        <h3>You have received messages from these people:</h3>
+        <ul>
+          {% for contact in contacts %}
+            <li> {{ contact.sender }} : {{ contact.email }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+</div>
+{% endblock %}

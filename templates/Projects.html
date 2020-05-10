@@ -1,0 +1,48 @@
+{%  extends "index.html" %}
+
+{%  block title %}{{ super() }} - Projects{%  endblock %}
+
+{% block content %}
+    <div class="container" style="margin-top:30px">
+  <div class="row">
+    <div class="col-sm-8">
+    <h1>Projects</h1>
+    </br>
+        <!––Personal projects with embedded YouTube videos-->
+        <h5>Pixelles Game Incubator</h5>
+        <p>Winter 2019</p>
+        <p>Created a simple two player puzzle game on Unity3D using C# <br>
+        <a href="https://devinea.itch.io/inner-conflict"> Download game on itchio </a> <br>
+      <a href="https://github.com/Devineadz/Inner_Conflict"> Check out the code on Github</a> </p>
+        <div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://youtube.com/embed/qQQ2l7CMs1g"></iframe>
+</div>
+    </br>
+        <h5>Gamerella 2019</h5>
+        <p>Fall 2019</p>
+        <p>Worked with a team of three on programming part to create a simple game on Unity3D using C#. <br>
+        <a href="https://devinea.itch.io/donytas-quake"> Download game on itchio </a> <br>
+      <a href="https://github.com/Devineadz/donytas-quake"> Check out the game scripts on Github</a> </p>
+        <div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://youtube.com/embed/WLz2kGSCtkg"></iframe>
+    </div> </br>
+        <h5>OpenGL project for Computer Graphics class</h5>
+        <p>Fall 2019</p>
+        <p>A personal computer graphics project using OpenGL  </p>
+        <div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://youtube.com/embed/MBjRGfOW8zc"></iframe>
+    </div>
+    </div>
+  <div class="col-sm-4">
+      <img src="{{url_for('static', filename='img/IC.png')}}" alt="InnerConflict 1" width="250">
+      </br></br>
+      <img src="{{url_for('static', filename='img/IC123.jpg')}}" alt="InnerConflict 2" width="250"></br></br>
+      <img src="{{url_for('static', filename='img/Donyta.JPG')}}" alt="Donyta" width="250">
+</br>
+</div>
+
+
+  </div>
+</div>
+</div>
+{% endblock %}
